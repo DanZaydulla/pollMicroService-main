@@ -1,4 +1,4 @@
-package com.pollMicroService.mapper;
+package com.pollMicroService.repository.mapper;
 
 import com.pollMicroService.model.Questions;
 import org.springframework.jdbc.core.RowMapper;

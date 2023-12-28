@@ -1,4 +1,4 @@
-package com.pollMicroService.mapper;
+package com.pollMicroService.repository.mapper;
 
 import com.pollMicroService.model.Answers;
 import org.springframework.jdbc.core.RowMapper;
@@ -13,6 +13,6 @@ public class AnswersMapper implements RowMapper<Answers> {
                 rs.getInt("id"),
                 rs.getInt("question_id"),
                 rs.getString("answer_option"),
-                rs.getInt("userId"));
+                rs.getInt("user_id"));
     }
 }

@@ -1,6 +1,6 @@
 package com.pollMicroService.repository;
 
-import com.pollMicroService.mapper.QuestionsMapper;
+import com.pollMicroService.repository.mapper.QuestionsMapper;
 import com.pollMicroService.model.Questions;
 import com.pollMicroService.utils.Constants;
 import org.springframework.beans.factory.annotation.Autowired;

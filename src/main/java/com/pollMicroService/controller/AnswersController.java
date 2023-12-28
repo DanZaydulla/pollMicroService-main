@@ -6,6 +6,8 @@ import com.pollMicroService.service.AnswersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/answer")
 public class AnswersController {
@@ -35,5 +37,10 @@ public class AnswersController {
         } else {
             return answersService.updateAnswersById(answers.getQuestionId(), answers.getAnswerOption());
         }
+    }
+
+    @GetMapping(value = "/by_user_id")
+    public List<Answers> findAnswersByUserId(@RequestParam int userId) {
+        return answersService.findAnswersByUserId(userId);
     }
 }
