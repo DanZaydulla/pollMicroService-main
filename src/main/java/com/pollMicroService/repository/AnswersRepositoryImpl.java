@@ -32,12 +32,12 @@ public class AnswersRepositoryImpl implements AnswersRepository{
     }
 
     @Override
-    public String deleteAnswersById(int questionId) {
-        String sql = "DELETE FROM " + Constants.ANSWERS_TABLE_NAME + " WHERE question_id = ?";
-        if(jdbcTemplate.update(sql, questionId) == 1){
-            return "Answer to the question with id " + questionId + " was deleted";
+    public String deleteAnswersById(int userId) {
+        String sql = "DELETE FROM " + Constants.ANSWERS_TABLE_NAME + " WHERE user_id = ?";
+        if(jdbcTemplate.update(sql, userId) >= 1) {
+            return "Answers for user with ID " + userId + " were deleted";
         } else {
-            return "Answer to the question with id " + questionId + " wasn't found";
+            return "No answers found for user with ID " + userId;
         }
     }
 

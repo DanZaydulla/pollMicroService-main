@@ -5,6 +5,8 @@ import com.pollMicroService.repository.QuestionsRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class QuestionsServiceImpl implements QuestionsService{
 
@@ -30,5 +32,9 @@ public class QuestionsServiceImpl implements QuestionsService{
     @Override
     public String updateQuestionById(int questionId, String question) {
         return questionsRepository.updateQuestionById(questionId, question);
+    }
+    @Override
+    public List<Questions> getAllQuestions() {
+        return questionsRepository.getAllQuestions();
     }
 }

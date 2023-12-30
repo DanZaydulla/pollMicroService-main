@@ -25,10 +25,11 @@ public class AnswersController {
         return answersService.getAnswersByQuestionId(questionId);
     }
 
-    @DeleteMapping
-    public String deleteAnswersById(@RequestParam int questionId) {
-        return answersService.deleteAnswersById(questionId);
+    @DeleteMapping(value = "/delete_answers_by_user_id/{userId}")
+    public String deleteAnswersById(@PathVariable int userId) {
+        return answersService.deleteAnswersById(userId);
     }
+
 
     @PutMapping
     public String updateAnswersById(@RequestBody Answers answers) {
@@ -39,8 +40,10 @@ public class AnswersController {
         }
     }
 
-    @GetMapping(value = "/by_user_id")
-    public List<Answers> findAnswersByUserId(@RequestParam int userId) {
+    @GetMapping(value = "/by_user_id/{userId}")
+    public List<Answers> findAnswersByUserId(@PathVariable int userId) {
         return answersService.findAnswersByUserId(userId);
     }
+
+
 }

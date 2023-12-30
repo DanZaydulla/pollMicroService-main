@@ -5,6 +5,8 @@ import com.pollMicroService.service.QuestionsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/question")
 public class QuestionsController {
@@ -34,6 +36,10 @@ public class QuestionsController {
         } else {
             return questionsService.updateQuestionById(questions.getQuestionId(), questions.getQuestion());
         }
+    }
+    @GetMapping("/all")
+    public List<Questions> getAllQuestions() {
+        return questionsService.getAllQuestions();
     }
 
 }

@@ -54,5 +54,5 @@ VALUES
 INSERT INTO answers (question_id, answer_option, user_id, customer_id)
 VALUES
 (1, 'Blue', 1, 1),
-(2, 'Python', 2, 2),
+(1, 'Python', 2, 2),
 (3, 'Traveling', 3, 3);

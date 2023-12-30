@@ -26,8 +26,9 @@ public class AnswersServiceImpl implements AnswersService{
     }
 
     @Override
-    public String deleteAnswersById(int questionId) {
-        return answersRepository.deleteAnswersById(questionId);
+    public String deleteAnswersById(int userId) {
+        return answersRepository.deleteAnswersById(userId);
+
     }
 
     @Override
@@ -38,5 +39,8 @@ public class AnswersServiceImpl implements AnswersService{
     @Override
     public List<Answers> findAnswersByUserId(int userId) {
         return answersRepository.findAnswersByUserId(userId);
+
     }
+
+
 }

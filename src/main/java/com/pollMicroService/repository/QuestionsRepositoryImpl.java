@@ -1,11 +1,15 @@
 package com.pollMicroService.repository;
 
+import com.pollMicroService.model.Answers;
+import com.pollMicroService.repository.mapper.AnswersMapper;
 import com.pollMicroService.repository.mapper.QuestionsMapper;
 import com.pollMicroService.model.Questions;
 import com.pollMicroService.utils.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public class QuestionsRepositoryImpl implements QuestionsRepository{
@@ -22,9 +26,10 @@ public class QuestionsRepositoryImpl implements QuestionsRepository{
 
     @Override
     public Questions getQuestionById(int questionId) {
-        String sql = "SELECT FROM " + Constants.QUESTIONS_TABLE_NAME + " WHERE id = ?";
+        String sql = "SELECT * FROM " + Constants.QUESTIONS_TABLE_NAME + " WHERE id = ?";
         return jdbcTemplate.queryForObject(sql, new QuestionsMapper(), questionId);
     }
+
 
     @Override
     public String deleteQuestionById(int questionId) {
@@ -44,5 +49,11 @@ public class QuestionsRepositoryImpl implements QuestionsRepository{
         } else {
             return "Question with id " + questionId + " wasn't found";
         }
+    }
+
+    @Override
+    public List<Questions> getAllQuestions() {
+        String sql = "SELECT * FROM questions";
+        return jdbcTemplate.query(sql, new QuestionsMapper());
     }
 }

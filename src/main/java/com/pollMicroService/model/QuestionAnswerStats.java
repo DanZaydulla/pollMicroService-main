@@ -1,4 +1,5 @@
 package com.pollMicroService.model;
 
-public class AnswersResponse {
+public class QuestionAnswerStats {
+
 }
