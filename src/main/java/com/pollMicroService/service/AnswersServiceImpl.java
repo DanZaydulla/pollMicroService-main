@@ -42,5 +42,10 @@ public class AnswersServiceImpl implements AnswersService{
 
     }
 
+    @Override
+    public List<Answers> getAllAnswers() {
+        return answersRepository.getAllAnswers();
+    }
+
 
 }

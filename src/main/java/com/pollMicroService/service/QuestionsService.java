@@ -12,4 +12,5 @@ public interface QuestionsService {
     String deleteQuestionById(int questionId);
     String updateQuestionById(int questionId, String question);
     List<Questions> getAllQuestions();
+    int countUserAnswersByQuestionId(int questionId);
 }

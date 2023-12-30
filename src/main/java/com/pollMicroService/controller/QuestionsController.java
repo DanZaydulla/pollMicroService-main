@@ -42,4 +42,9 @@ public class QuestionsController {
         return questionsService.getAllQuestions();
     }
 
+    @GetMapping("/user-answers-count")
+    public int getUserAnswersCountForQuestion(@RequestParam int questionId) {
+        return questionsService.countUserAnswersByQuestionId(questionId);
+    }
+
 }

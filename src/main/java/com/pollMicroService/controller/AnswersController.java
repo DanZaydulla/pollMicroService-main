@@ -1,7 +1,6 @@
 package com.pollMicroService.controller;
 
 import com.pollMicroService.model.Answers;
-import com.pollMicroService.model.Questions;
 import com.pollMicroService.service.AnswersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -43,6 +42,10 @@ public class AnswersController {
     @GetMapping(value = "/by_user_id/{userId}")
     public List<Answers> findAnswersByUserId(@PathVariable int userId) {
         return answersService.findAnswersByUserId(userId);
+    }
+    @GetMapping("/all")
+    public List<Answers> getAllAnswers() {
+        return answersService.getAllAnswers();
     }
 
 

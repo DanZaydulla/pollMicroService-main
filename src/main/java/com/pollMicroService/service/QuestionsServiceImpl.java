@@ -37,4 +37,9 @@ public class QuestionsServiceImpl implements QuestionsService{
     public List<Questions> getAllQuestions() {
         return questionsRepository.getAllQuestions();
     }
+
+    @Override
+    public int countUserAnswersByQuestionId(int questionId) {
+        return questionsRepository.countUserAnswersByQuestionId(questionId);
+    }
 }

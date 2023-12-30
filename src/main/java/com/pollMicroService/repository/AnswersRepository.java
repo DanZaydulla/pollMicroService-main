@@ -11,5 +11,6 @@ public interface AnswersRepository {
     String deleteAnswersById(int userId);
     String updateAnswersById(int questionId, String answerOption);
     List<Answers> findAnswersByUserId(int userId);
+    List<Answers> getAllAnswers();
 
 }
