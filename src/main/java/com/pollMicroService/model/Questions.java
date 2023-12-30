@@ -1,21 +1,27 @@
 package com.pollMicroService.model;
 
-public class Questions {
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+public class Questions {
+    @JsonProperty("id")
     private int questionId;
     private String question;
-    private String answer_1;
-    private String answer_2;
-    private String answer_3;
-    private String answer_4;
+    @JsonProperty("answer_1")
+    private String answer1;
+    @JsonProperty("answer_2")
+    private String answer2;
+    @JsonProperty("answer_3")
+    private String answer3;
+    @JsonProperty("answer_4")
+    private String answer4;
 
-    public Questions(int questionId, String question, String answer_1, String answer_2, String answer_3, String answer_4) {
+    public Questions(int questionId, String question, String answer1, String answer2, String answer3, String answer4) {
         this.questionId = questionId;
         this.question = question;
-        this.answer_1 = answer_1;
-        this.answer_2 = answer_2;
-        this.answer_3 = answer_3;
-        this.answer_4 = answer_4;
+        this.answer1 = answer1;
+        this.answer2 = answer2;
+        this.answer3 = answer3;
+        this.answer4 = answer4;
     }
 
     public int getQuestionId() {
@@ -34,35 +40,35 @@ public class Questions {
         this.question = question;
     }
 
-    public String getAnswer_1() {
-        return answer_1;
+    public String getAnswer1() {
+        return answer1;
     }
 
-    public void setAnswer_1(String answer_1) {
-        this.answer_1 = answer_1;
+    public void setAnswer1(String answer1) {
+        this.answer1 = answer1;
     }
 
-    public String getAnswer_2() {
-        return answer_2;
+    public String getAnswer2() {
+        return answer2;
     }
 
-    public void setAnswer_2(String answer_2) {
-        this.answer_2 = answer_2;
+    public void setAnswer2(String answer2) {
+        this.answer2 = answer2;
     }
 
-    public String getAnswer_3() {
-        return answer_3;
+    public String getAnswer3() {
+        return answer3;
     }
 
-    public void setAnswer_3(String answer_3) {
-        this.answer_3 = answer_3;
+    public void setAnswer3(String answer3) {
+        this.answer3 = answer3;
     }
 
-    public String getAnswer_4() {
-        return answer_4;
+    public String getAnswer4() {
+        return answer4;
     }
 
-    public void setAnswer_4(String answer_4) {
-        this.answer_4 = answer_4;
+    public void setAnswer4(String answer4) {
+        this.answer4 = answer4;
     }
 }

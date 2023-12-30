@@ -47,6 +47,10 @@ public class AnswersController {
     public List<Answers> getAllAnswers() {
         return answersService.getAllAnswers();
     }
+    @GetMapping("/users-answered/{questionId}")
+    public int getTotalUsersAnsweredForQuestion(@PathVariable int questionId) {
+        return answersService.getTotalUsersAnsweredForQuestion(questionId);
+    }
 
 
 }

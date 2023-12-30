@@ -1,7 +1,5 @@
 package com.pollMicroService.repository;
 
-import com.pollMicroService.model.Answers;
-import com.pollMicroService.repository.mapper.AnswersMapper;
 import com.pollMicroService.repository.mapper.QuestionsMapper;
 import com.pollMicroService.model.Questions;
 import com.pollMicroService.utils.Constants;
@@ -20,7 +18,7 @@ public class QuestionsRepositoryImpl implements QuestionsRepository{
     @Override
      public String createQuestions(Questions questions) {
         String sql = "INSERT INTO " + Constants.QUESTIONS_TABLE_NAME + " (question, answer_1, answer_2, answer_3, answer_4) VALUES(?,?,?,?,?)";
-        jdbcTemplate.update(sql, questions.getQuestion(), questions.getAnswer_1(), questions.getAnswer_2(), questions.getAnswer_3(), questions.getAnswer_4());
+        jdbcTemplate.update(sql, questions.getQuestion(), questions.getAnswer1(), questions.getAnswer2(), questions.getAnswer3(), questions.getAnswer4());
         return "Question was added successfully !";
     }
 

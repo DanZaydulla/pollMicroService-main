@@ -12,5 +12,6 @@ public interface AnswersRepository {
     String updateAnswersById(int questionId, String answerOption);
     List<Answers> findAnswersByUserId(int userId);
     List<Answers> getAllAnswers();
+    int getTotalUsersAnsweredForQuestion(int questionId);
 
 }

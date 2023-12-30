@@ -62,4 +62,10 @@ public class AnswersRepositoryImpl implements AnswersRepository{
         String sql = "SELECT * FROM answers";
         return jdbcTemplate.query(sql, new AnswersMapper());
     }
+
+    @Override
+    public int getTotalUsersAnsweredForQuestion(int questionId) {
+        String sql = "SELECT COUNT(DISTINCT user_id) FROM " + Constants.ANSWERS_TABLE_NAME + " WHERE question_id = ?";
+        return jdbcTemplate.queryForObject(sql, Integer.class, questionId);
+    }
 }

@@ -46,6 +46,8 @@ public class AnswersServiceImpl implements AnswersService{
     public List<Answers> getAllAnswers() {
         return answersRepository.getAllAnswers();
     }
-
-
+    @Override
+    public int getTotalUsersAnsweredForQuestion(int questionId) {
+        return answersRepository.getTotalUsersAnsweredForQuestion(questionId);
+    }
 }
